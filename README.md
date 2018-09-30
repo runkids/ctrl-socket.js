@@ -64,13 +64,13 @@ HTML
 
     disconnect , readyState changes to CLOSED
     ```javascript
-    ws.disconnect()
+    ws.disconnect(code = 1000, reason = 'Normal closure')
     ```
 5. reconnect
 
     reconnect to server
     ```javascript
-    ws.reconnect(code = 1000, reason = 'Normal closure')
+    ws.reconnect()
     ```
 6. send
 
@@ -83,6 +83,7 @@ HTML
     })
     ```
 7. readyState
+
     get websocket state
     ```javascript
     const state = ws.readyState
@@ -114,9 +115,11 @@ HTML
     ```
 
 8. heartBeat
+
     Check websocket still connect to server, if loss connection will call onclose.
-    
+
     ws.heartBeat(interval: Number, message)
+
     `interval--> default 30 seconds`
 
     ```javascript
