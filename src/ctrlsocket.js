@@ -181,13 +181,17 @@ class CtrlSocket {
 	}
 
 	connect() {
-		if (this.wsState !== CLOSED) {
-			throw new Error('Connection is busy, please try again later.');
+		try{
+			if (this.wsState !== CLOSED) {
+				throw new Error('Connection is busy, please try again later.');
+			}
+			this.wsState = CONNECTING;
+			this.ws = new WebSocket(this.url);
+			this[initWebsocketEvent]();
+			return this;
+		}catch(error){
+			this.wsState = CLOSED;
 		}
-		this.wsState = CONNECTING;
-		this.ws = new WebSocket(this.url);
-		this[initWebsocketEvent]();
-		return this;
 	}
 
 	disconnect(code = 1000, reason = 'Normal closure') {

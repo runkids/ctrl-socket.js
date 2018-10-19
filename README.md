@@ -9,7 +9,7 @@ import CtrlSocket from "ctrl-socket";
 ```
 HTML
 ```HTML
-<script src="./ctrlsocket.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ctrl-socket@0.0.1/dist/ctrlsocket.min.js"></script>
 ```
 
 

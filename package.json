@@ -1,6 +1,6 @@
 {
   "name": "ctrl-socket",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CtrlSocket.js is WebSocket client util and easy to use.",
   "main": "dist/ctrlsocket.min.js",
   "files": [
